@@ -2,9 +2,9 @@
   <div>
     <br />
     <h1>{{ msg }}</h1>
-    <br/>
+    <br />
     <h4>Login</h4>
-    <form v-on:submit="login" >
+    <form v-on:submit="login">
       <label for="email">Email</label>
       <div>
         <input id="email" type="email" v-model="email" required autofocus />
@@ -28,7 +28,8 @@ export default {
   data() {
     var mensagem = "";
     if (localStorage.userLogged === "true") {
-      mensagem = "Seja bem vindo usuário logado: " + localStorage.emailUserLogged;
+      mensagem =
+        "Seja bem vindo usuário logado: " + localStorage.emailUserLogged;
     } else {
       mensagem = "Efetue login ou se cadastre no sistema !";
     }
@@ -41,6 +42,13 @@ export default {
   methods: {
     login(e) {
       e.preventDefault();
+
+      //console.log('Count: ' + this.$store.state.count) // -> 1
+
+      //this.$store.commit('increment')
+
+      //console.log('Count: ' + this.$store.state.count) // -> 1
+
       if (this.password.length > 0) {
         var data = {
           email: this.email,
@@ -68,9 +76,12 @@ export default {
             if (logado === true) {
               alert("Usuário logado com sucesso !!");
 
-              localStorage.setItem("userLogged", true);
-              localStorage.setItem("emailUserLogged", this.email);
+              this.$store.commit('setUsuarioLogado', logado);
+
+              //localStorage.setItem("userLogged", true);
+              //localStorage.setItem("emailUserLogged", this.email);
               //Redireciona para a página inicial
+
               this.$router.push("Home");
             } else {
               alert("Usuário ou senha inválidos!!");
@@ -78,7 +89,7 @@ export default {
           }
         );
       }
-    }
+    },
   },
 };
 </script>

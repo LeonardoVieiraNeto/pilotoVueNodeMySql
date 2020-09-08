@@ -6,6 +6,8 @@ import Primeiro from '@/components/Primeiro'
 import Home from '@/components/Home'
 import Login from '@/components/Login'
 import Logout from '@/components/Logout'
+import Counter from '@/components/Counter'
+import Header from '@/components/Header'
 
 Vue.use(Routers)
 
@@ -40,6 +42,16 @@ export default new Routers({
       path: '/Logout',
       name: 'Logout',
       component: Logout
+    },
+    {
+      path: '/Counter',
+      name: 'Counter',
+      component: Counter
+    },
+    {
+      path: '/Header',
+      name: 'Header',
+      component: Header
     }
   ]
 })
