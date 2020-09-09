@@ -13,12 +13,11 @@ export default new Vuex.Store({
       state.count++
     },
     decrement (state) {
+      alert(state.count);
       state.count--
     },
     setUsuarioLogado(state, n) {
-      alert('Dentro do setUsuarioLogado');
-      alert(n);
-      state.UsuarioLogado = "Leo"
+      state.UsuarioLogado = n;
     }
   }
 })

@@ -14,8 +14,7 @@ export default {
     },
   },
   mounted() {
-    localStorage.setItem("userLogged", false);
-    localStorage.setItem("emailUserLogged", "");
+    this.$store.commit('setUsuarioLogado', "");
   },
 };
 </script>

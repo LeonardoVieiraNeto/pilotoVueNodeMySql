@@ -1,6 +1,6 @@
 <template>
   <div>
-    <br/>
+    <br />
     <p class="text-center">
       {{ msg }}
       <br />
@@ -10,18 +10,16 @@
 
 <script>
 export default {
-  data: function () {
-    var msg = "";
-  if (this.$store.state.UsuarioLogado == "") {
-      msg = "Efetue login ou se cadastre no sistema !";
-    } else {
-      msg = this.$store.state.usuarioLogado;
-    }
-    return {
-      msg : msg
-    };
-  },
   name: "Header",
   methods: {},
+  computed: {
+    msg() {
+      if (this.$store.state.UsuarioLogado == "") {
+        return "Efetue login ou se cadastre no sistema !";
+      } else {
+        return "Seja bem-vindo: " + this.$store.state.UsuarioLogado;
+      }
+    },
+  },
 };
 </script>

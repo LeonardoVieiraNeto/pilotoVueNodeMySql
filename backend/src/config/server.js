@@ -48,10 +48,11 @@ server.post('/auth', function (request, response) {
 
   let query = conn.query(sql, (err, results) => {
     if (err) throw err;
+    console.log(results[0].user_first_name);
     if (results.length > 0) {
-      response.send(true);
+      response.send(results[0].user_first_name);
     } else {
-      response.send(false);
+      response.send("");
     }
     response.end();
   });

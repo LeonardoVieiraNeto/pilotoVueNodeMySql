@@ -1,8 +1,6 @@
 <template>
   <div>
     <br />
-    <h1>{{ msg }}</h1>
-    <br />
     <h4>Login</h4>
     <form v-on:submit="login">
       <label for="email">Email</label>
@@ -26,15 +24,7 @@
 <script>
 export default {
   data() {
-    var mensagem = "";
-    if (localStorage.userLogged === "true") {
-      mensagem =
-        "Seja bem vindo usuário logado: " + localStorage.emailUserLogged;
-    } else {
-      mensagem = "Efetue login ou se cadastre no sistema !";
-    }
     return {
-      msg: mensagem,
       email: "",
       password: "",
     };
@@ -42,13 +32,6 @@ export default {
   methods: {
     login(e) {
       e.preventDefault();
-
-      //console.log('Count: ' + this.$store.state.count) // -> 1
-
-      //this.$store.commit('increment')
-
-      //console.log('Count: ' + this.$store.state.count) // -> 1
-
       if (this.password.length > 0) {
         var data = {
           email: this.email,
@@ -70,19 +53,15 @@ export default {
 
         fetch("http://localhost:3000/auth", requestOptions).then(
           async (response) => {
-            var logado = await response.text();
-            logado = JSON.parse(logado);
+            var UserNameLogado = await response.text();
+            //logado = JSON.parse(logado);
 
-            if (logado === true) {
+            if (UserNameLogado != "") {
               alert("Usuário logado com sucesso !!");
 
-              this.$store.commit('setUsuarioLogado', logado);
+              this.$store.commit('setUsuarioLogado', UserNameLogado);
 
-              //localStorage.setItem("userLogged", true);
-              //localStorage.setItem("emailUserLogged", this.email);
-              //Redireciona para a página inicial
-
-              this.$router.push("Home");
+              this.$router.push("UsuarioList");
             } else {
               alert("Usuário ou senha inválidos!!");
             }
