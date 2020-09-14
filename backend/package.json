@@ -1,11 +1,11 @@
 {
-  "name": "my-money-backend",
+  "name": "piloto-vue-node-mysql",
   "version": "1.0.0",
   "description": "",
   "main": "src/loader.js",
   "scripts": {
     "dev": "nodemon",
-    "production": "pm2 start src/loader.js --name my-money-backend"
+    "production": "pm2 start src/loader.js --name piloto-vue-node-mysql"
   },
   "keywords": [],
   "author": "",
@@ -16,13 +16,17 @@
     "express": "^4.14.0",
     "express-query-int": "^1.0.1",
     "express-session": "^1.17.1",
+    "express-validator": "^6.6.1",
     "lodash": "^4.17.4",
     "mongoose": "^4.7.0",
     "mongoose-paginate": "^5.0.3",
+    "morgan": "^1.10.0",
     "mysql": "^2.17.1",
+    "mysql2": "^2.1.0",
     "node-restful": "^0.2.5",
     "pm2": "^2.1.5",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "sequelize": "^6.3.5"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
