@@ -1,8 +1,11 @@
 Pacotes instalados que iremos usar no projeto
 
--- morgan
+-- morgan 
+</br>
 -- npm i express-validator@5.2.0 — A última versão do express-validator não funcionou, instalei essa, que o Willi nos outros projetos. 
+</br>
 -- npm install cross-env
+</br>
 -- npm install md5
 -- npm install js-md5
 -- npm i cls-hooked
