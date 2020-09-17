@@ -1,34 +1,50 @@
 {
-  "name": "piloto-vue-node-mysql",
+  "name": "ErpMatrix",
   "version": "1.0.0",
   "description": "",
-  "main": "src/loader.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon",
-    "production": "pm2 start src/loader.js --name piloto-vue-node-mysql"
+    "start": "cross-env NODE_ENV=localhost DATABASE=ispcloud_starnet nodemon -L ./bin/ 3000 config.json ",
+    "test": "cross-env NODE_ENV=localhost DATABASE=ispcloud_starnet nyc --reporter=text mocha test/support/setup.js test/support/hooks.js",
+    "dev": "cross-env NODE_ENV=development URL=179.109.47.118 nodemon -L ./bin/ 3000 config.json ",
+    "debug": "cross-env NODE_ENV=localhost nodemon -L --inspect ./bin 3000 config.json",
+    "debugDev": "cross-env NODE_ENV=development nodemon --inspect ./bin 3000 config.json",
+    "prodGlobal": "cross-env NODE_ENV=production_direct_global DATABASE=ispcloud_starnet nodemon -L ./bin/ 3000 config.json ",
+    "extract": "cross-env NODE_ENV=development node ./extractDB/app.js",
+    "socket": "cross-env NODE_ENV=localhost nodemon ./socket/socket.js 6000",
+    "socketDebug": "cross-env NODE_ENV=localhost nodemon --inspect ./socket/socket.js 6000"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "cls-hooked": "^4.2.2",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.2",
     "express": "^4.14.0",
     "express-query-int": "^1.0.1",
     "express-session": "^1.17.1",
-    "express-validator": "^6.6.1",
+    "express-validator": "^5.2.0",
+    "js-md5": "^0.7.3",
     "lodash": "^4.17.4",
+    "md5": "^2.3.0",
     "mongoose": "^4.7.0",
     "mongoose-paginate": "^5.0.3",
     "morgan": "^1.10.0",
     "mysql": "^2.17.1",
     "mysql2": "^2.1.0",
     "node-restful": "^0.2.5",
+    "nodemailer": "^6.4.11",
     "pm2": "^2.1.5",
     "request": "^2.81.0",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
+  },
+  "bin": "bin/index.js",
+  "pkg": {
+    "scripts": "models/*.*"
   }
 }
