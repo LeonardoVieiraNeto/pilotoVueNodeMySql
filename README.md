@@ -1,12 +1,12 @@
 Pacotes instalados que iremos usar no projeto
 
-morgan
-npm i express-validator@5.2.0 — A última versão do express-validator não funcionou, instalei essa, que o Willi nos outros projetos. 
-npm install cross-env
-npm install md5
-npm install js-md5
-npm i cls-hooked
-nodemailer
+-- morgan
+-- npm i express-validator@5.2.0 — A última versão do express-validator não funcionou, instalei essa, que o Willi nos outros projetos. 
+-- npm install cross-env
+-- npm install md5
+-- npm install js-md5
+-- npm i cls-hooked
+-- nodemailer
 
 O serviço inicia sua execução pelo app.js e bin/index.js, as configurações(banco, portas, serviços externos) ficam no arquivo da pasta config
 
