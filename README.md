@@ -1,6 +1,6 @@
 Pacotes instalados que iremos usar no projeto
 
-morgan 
+morgan
 npm i express-validator@5.2.0 — A última versão do express-validator não funcionou, instalei essa, que o Willi nos outros projetos. 
 npm install cross-env
 npm install md5
