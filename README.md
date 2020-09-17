@@ -7,9 +7,14 @@ Pacotes instalados que iremos usar no projeto
 -- npm install cross-env
 </br>
 -- npm install md5
+</br>
 -- npm install js-md5
+</br>
 -- npm i cls-hooked
+</br>
 -- nodemailer
+</br>
+</br>
 
 O serviço inicia sua execução pelo app.js e bin/index.js, as configurações(banco, portas, serviços externos) ficam no arquivo da pasta config
 
